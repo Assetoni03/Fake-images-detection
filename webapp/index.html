@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="intro_content">
+        <div class="intro heading">
+            <span class="heading_words">Fake Image Detector AI</span>
+        </div>
+        <div class="intro text">
+            <span class="intro_text">
+                Introducing our advanced artificial intelligence system, 
+                equipped with remarkable capabilities for distinguishing 
+                between real and computer-generated images. Moreover, our 
+                AI possesses the unique ability to differentiate between 
+                hand-drawn pictures and those created using digital tools.
+            </span>
+        </div>
+        <div class="intro button">
+            <a href="#jakor" class="btn btn-outline-danger">Explore</a>
+        </div>
+
+    </div>
+
+    <div class="main_content" id="jakor">
+        <input type="file" accept="image/*" onchange="previewImage(event)">
+        <br>
+        <img id="preview" src="#" alt="Предпросмотр картинки" style="max-width: 300px; display: none;">
+    </div>
+
+
+
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('preview');
+                output.src = reader.result;
+                output.style.display = 'block';
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
